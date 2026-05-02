@@ -7,6 +7,7 @@ from app.db.base import Base
 
 if TYPE_CHECKING:
     from app.models.category import Category
+    from app.models.user import User
 
 
 class Question(Base):
@@ -20,5 +21,7 @@ class Question(Base):
     option_c: Mapped[str] = mapped_column(String(500), nullable=False)
     option_d: Mapped[str] = mapped_column(String(500), nullable=False)
     correct_index: Mapped[int] = mapped_column(Integer, nullable=False)
+    owner_id: Mapped[int | None] = mapped_column(ForeignKey("users.id"), nullable=True, index=True)
 
     category: Mapped["Category"] = relationship("Category", back_populates="questions")
+    owner: Mapped["User | None"] = relationship("User", back_populates="questions_owned")

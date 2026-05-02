@@ -1,8 +1,22 @@
 :root {
-  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  line-height: 1.5;
-  color: #0f172a;
-  background: #f1f5f9;
+  --bg: #0f1419;
+  --bg-elevated: #161d27;
+  --surface: #1c2634;
+  --border: #2d3a4d;
+  --text: #e8edf4;
+  --muted: #8b9cb3;
+  --accent: #38bdf8;
+  --accent-dim: rgba(56, 189, 248, 0.12);
+  --danger: #f87171;
+  --danger-bg: rgba(248, 113, 113, 0.1);
+  --radius: 10px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+  font-family: "DM Sans", system-ui, sans-serif;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  font-feature-settings: "kern" 1;
 }
 
 * {
@@ -19,4 +33,9 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: var(--text);
 }

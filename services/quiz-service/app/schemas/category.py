@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, computed_field, field_validator
 
 
 class CategoryBase(BaseModel):
@@ -31,5 +31,11 @@ class CategoryUpdate(BaseModel):
 
 class CategoryRead(CategoryBase):
     id: int
+    owner_id: int | None = None
 
     model_config = {"from_attributes": True}
+
+    @computed_field
+    @property
+    def is_system(self) -> bool:
+        return self.owner_id is None
