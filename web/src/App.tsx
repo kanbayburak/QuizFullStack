@@ -373,10 +373,6 @@ function App() {
         <div className="header-top">
           <div>
             <h1>Quiz paneli</h1>
-            <p className="muted">
-              Varsayılan kategoriler ve sorular herkese açıktır. Giriş yaparak kendi kategorilerinizi ve sorularınızı
-              ekleyebilirsiniz; varsayılan içerik salt okunurdur.
-            </p>
           </div>
           <div className="user-bar">
             {me ? (
@@ -392,12 +388,6 @@ function App() {
               </button>
             )}
           </div>
-        </div>
-        <div className="badge-row">
-          <span className="badge">FastAPI</span>
-          <span className="badge">PostgreSQL</span>
-          <span className="badge">JWT</span>
-          <span className="badge">React · Vite</span>
         </div>
       </header>
 

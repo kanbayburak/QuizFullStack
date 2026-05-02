@@ -31,14 +31,15 @@
   font-weight: 600;
   border-radius: 8px;
   border: 1px solid var(--border);
-  background: transparent;
+  background: var(--bg-elevated);
   color: var(--muted);
   cursor: pointer;
 }
 
 .btn-dismiss-login:hover {
   color: var(--text);
-  border-color: #4a5f78;
+  border-color: var(--border-strong);
+  background: var(--bg-gradient-mid);
 }
 
 .login-overlay {
@@ -49,8 +50,8 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(6px);
+  background: rgba(100, 116, 139, 0.35);
+  backdrop-filter: blur(8px);
 }
 
 .header-top {
@@ -69,7 +70,7 @@
 
 .user-label {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
@@ -80,14 +81,15 @@
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--bg-elevated);
-  color: var(--text);
+  color: var(--text-secondary);
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
 }
 
 .btn-logout:hover {
-  border-color: #4a5f78;
-  background: #252f3d;
+  border-color: var(--border-strong);
+  background: var(--bg-gradient-mid);
+  color: var(--text);
 }
 
 .btn-primary-outline {
@@ -95,7 +97,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   border-radius: 8px;
-  border: 1px solid rgba(56, 189, 248, 0.45);
+  border: 1px solid var(--accent-ring);
   background: var(--accent-dim);
   color: var(--accent);
   cursor: pointer;
@@ -103,8 +105,8 @@
 }
 
 .btn-primary-outline:hover {
-  border-color: rgba(56, 189, 248, 0.65);
-  background: rgba(56, 189, 248, 0.12);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .layout {
@@ -122,33 +124,12 @@
   font-size: 1.65rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .header .muted {
   max-width: 52ch;
-  line-height: 1.5;
-}
-
-.badge-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: var(--accent-dim);
-  color: var(--accent);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  line-height: 1.55;
 }
 
 .muted {
@@ -162,11 +143,11 @@
   justify-content: space-between;
   gap: 1rem;
   background: var(--danger-bg);
-  color: #fecaca;
+  color: var(--danger-text);
   padding: 0.85rem 1rem;
   border-radius: var(--radius);
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(248, 113, 113, 0.35);
+  border: 1px solid var(--danger-border);
 }
 
 .banner.error button.dismiss {
@@ -174,23 +155,23 @@
   padding: 0.25rem 0.6rem;
   font-size: 0.75rem;
   border-radius: 6px;
-  border: 1px solid rgba(248, 113, 113, 0.4);
-  background: transparent;
-  color: #fecaca;
+  border: 1px solid var(--danger-border);
+  background: var(--bg-elevated);
+  color: var(--danger-text);
   cursor: pointer;
 }
 
 .banner.error button.dismiss:hover {
-  background: rgba(248, 113, 113, 0.15);
+  background: var(--danger-bg);
 }
 
 .banner.info {
-  background: rgba(56, 189, 248, 0.08);
-  color: #bae6fd;
+  background: #eff6ff;
+  color: #1e40af;
   padding: 0.85rem 1rem;
   border-radius: var(--radius);
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid #bfdbfe;
 }
 
 .auth-tabs {
@@ -213,7 +194,7 @@
 
 .auth-tab.active {
   background: var(--accent-dim);
-  border-color: rgba(56, 189, 248, 0.4);
+  border-color: var(--accent-ring);
   color: var(--accent);
 }
 
@@ -226,9 +207,9 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   border-radius: 999px;
-  background: var(--accent-dim);
+  background: var(--accent-soft);
   color: var(--accent);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(13, 148, 136, 0.22);
   vertical-align: middle;
 }
 
@@ -250,7 +231,7 @@
   border-radius: var(--radius);
   padding: 1.35rem;
   box-shadow: var(--shadow);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .card h2 {
@@ -258,6 +239,7 @@
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  color: var(--text);
 }
 
 .cat-list {
@@ -274,27 +256,30 @@
   width: 100%;
   text-align: left;
   padding: 0.65rem 0.85rem;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  transition: border-color 0.15s, background 0.15s;
+  gap: 0.25rem;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
 }
 
 .cat:hover {
-  border-color: #4a5f78;
+  border-color: var(--border-strong);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .cat.active {
-  background: var(--accent-dim);
-  border-color: rgba(56, 189, 248, 0.45);
+  background: var(--accent-soft);
+  border-color: var(--accent-ring);
+  box-shadow: 0 2px 12px rgba(13, 148, 136, 0.12);
 }
 
 .cat-name {
   font-weight: 600;
+  color: var(--text);
 }
 
 .cat-slug {
@@ -314,15 +299,15 @@
 }
 
 .cat-origin.system {
-  background: rgba(148, 163, 184, 0.12);
-  color: #94a3b8;
-  border-color: rgba(148, 163, 184, 0.28);
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0;
 }
 
 .cat-origin.mine {
-  background: rgba(52, 211, 153, 0.1);
-  color: #34d399;
-  border-color: rgba(52, 211, 153, 0.35);
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
 }
 
 .cat-origin-inline {
@@ -334,11 +319,11 @@
 }
 
 .cat-origin-inline.system {
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .cat-origin-inline.mine {
-  color: #34d399;
+  color: #059669;
 }
 
 .muted.tiny {
@@ -355,7 +340,7 @@
   margin: 0.25rem 0 0;
   font-size: 0.92rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 .form label {
@@ -363,7 +348,7 @@
   flex-direction: column;
   gap: 0.35rem;
   font-size: 0.82rem;
-  color: #cbd5e1;
+  color: var(--text-secondary);
 }
 
 .form input,
@@ -372,7 +357,7 @@
   padding: 0.55rem 0.65rem;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: var(--bg-elevated);
+  background: #fafbfc;
   color: var(--text);
 }
 
@@ -380,24 +365,28 @@
 .form textarea:focus,
 .form select:focus {
   outline: none;
-  border-color: rgba(56, 189, 248, 0.55);
+  border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-dim);
+  background: var(--bg-elevated);
 }
 
 .form button[type="submit"] {
   margin-top: 0.35rem;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  padding: 0.62rem 1rem;
+  border-radius: 10px;
   border: none;
-  background: linear-gradient(165deg, #38bdf8 0%, #0ea5e9 100%);
-  color: #0f172a;
+  background: linear-gradient(165deg, var(--accent-bright) 0%, var(--accent) 100%);
+  color: #ffffff;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.15s, transform 0.1s;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 12px rgba(13, 148, 136, 0.28);
+  transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
 }
 
 .form button[type="submit"]:hover:not(:disabled) {
-  opacity: 0.95;
+  opacity: 0.96;
+  box-shadow: 0 4px 18px rgba(13, 148, 136, 0.35);
 }
 
 .form button[type="submit"]:disabled {
@@ -448,7 +437,7 @@ th {
 }
 
 tbody tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(13, 148, 136, 0.04);
 }
 
 .q-text {
@@ -462,8 +451,8 @@ tbody tr:hover td {
   padding: 0.38rem 0.65rem;
   font-size: 0.78rem;
   border-radius: 6px;
-  border: 1px solid rgba(248, 113, 113, 0.35);
-  background: transparent;
+  border: 1px solid var(--danger-border);
+  background: var(--bg-elevated);
   color: var(--danger);
   cursor: pointer;
   transition: background 0.15s;
@@ -487,9 +476,9 @@ tbody tr:hover td {
   border-radius: 8px;
   background: linear-gradient(
     90deg,
-    var(--bg-elevated) 0%,
-    rgba(255, 255, 255, 0.04) 50%,
-    var(--bg-elevated) 100%
+    #eef2f7 0%,
+    #f8fafc 50%,
+    #eef2f7 100%
   );
   background-size: 200% 100%;
   animation: shimmer 1.2s ease-in-out infinite;
@@ -508,7 +497,7 @@ tbody tr:hover td {
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  border: 2px solid rgba(56, 189, 248, 0.25);
+  border: 2px solid var(--accent-dim);
   border-top-color: var(--accent);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
